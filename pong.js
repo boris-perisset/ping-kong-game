@@ -43,17 +43,17 @@ function draw() {
   ellipse(currentPos.xStart, currentPos.yStart, currentPos.radius);
   
   // Ball prallt ab (Bounce)
-  if (currentPos.x > (windowWidth-currentPos.radius) || currentPos.x < (0+currentPos.radius)) {
-    currentPos.changeX = currentPos.veloX  * -1;
+  if (currentPos.xStart > (windowWidth-currentPos.radius) || currentPos.xStart < (0+currentPos.radius)) {
+    currentPos.veloX = currentPos.veloX  * -1;
   }
 
-  if (currentPos.y > (windowHeight-currentPos.radius) || currentPos.y < (0+currentPos.radius)) {
-    currentPos.changeY = currentPos.veloY * -1;
+  if (currentPos.yStart > (windowHeight-currentPos.radius) || currentPos.yStart < (0+currentPos.radius)) {
+    currentPos.veloY = currentPos.veloY * -1;
   }
 
-  // Ball fliegt (eigentlich...????)
-  currentPos.x += currentPos.veloX;
-  currentPos.y += currentPos.veloY;
+  // Ball fliegt (langsam)
+  currentPos.xStart += currentPos.veloX;
+  currentPos.yStart += currentPos.veloY;
 
 }
 }
