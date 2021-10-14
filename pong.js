@@ -2,6 +2,9 @@ var score = 0
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  textFont('Press Start 2P');
+
+
 }
 
 function draw() {
@@ -11,6 +14,7 @@ function draw() {
   
   //Score
   textSize(24);
-  text("Score: " + score, 10, 25);
+  text("Score: " + score, 12,  25);
+
 
 }
