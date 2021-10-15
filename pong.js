@@ -30,7 +30,7 @@ function setup() {
 
 }
 
-  // das Object Paddle 01, damit wir die Paddle Position herausfinden können.
+  // das Object Paddle 01, damit wir die Paddle Position herausfinden können. Vielleicht...
   let pad =  {
     padHeight: 90,
     paddlePosY: [] //Dies sollte die untere yPos Ecke des Paddles tracken...
@@ -74,7 +74,7 @@ function draw() {
   if (currentPos.yPos > (height-currentPos.radius) || currentPos.yPos < (0+currentPos.radius)) {
     currentPos.speedY = currentPos.speedY * -1;
   }
-  // Ball fliegt (langsam)
+  // Ball fliegt
   currentPos.xPos += currentPos.speedX;
   currentPos.yPos += currentPos.speedY;
 
