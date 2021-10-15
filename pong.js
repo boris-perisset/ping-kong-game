@@ -46,7 +46,7 @@ function draw() {
   textSize(24);
 
   textFont('Press Start 2P');
-  text("Your Score: " + score, 12,  25);
+  text("Your Score: " + score, width/2-80,  30);
  
   //Paddle 01
   rect(10, mouseY, 10, pad.padHeight);
