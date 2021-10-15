@@ -21,4 +21,5 @@ html, body {
     border:rgb(0, 255, 76);
     border-style: solid;
     margin: 2vw;
+    filter: drop-shadow(0 0 40px rgba(0, 255, 76, 0.6));
   }
