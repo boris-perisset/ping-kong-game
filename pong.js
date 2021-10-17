@@ -1,4 +1,5 @@
-var score = 0
+var score1 = 0
+var score2 = 0
 let puck = []
 
 
@@ -9,7 +10,7 @@ function setup() {
   
   var width = 600;
   var height = 500;
-  var canvas =   createCanvas(width, height);
+  var canvas = createCanvas(width, height);
   // Move the canvas so it’s inside our <div id="sketch-holder">.
   canvas.parent('pong-frame');
   ellipseMode(RADIUS);
@@ -34,7 +35,7 @@ function setup() {
   let pad =  {
     padHeight: 90,
     paddlePosY: [] //Dies sollte die untere yPos Ecke des Paddles tracken...
-  }
+}
 
 function draw() {
 
@@ -42,12 +43,19 @@ function draw() {
   background(0);
   fill (0, 255, 67);
 
-  //Score
+  //Score Player1
   textSize(24);
-
+  textAlign(LEFT);
   textFont('Press Start 2P');
-  text("Your Score: " + score, width/2-80,  30);
+  text("Player 1 Score: " + score1, 50,  30);
  
+ //Score Player2
+  textSize(24);
+  textAlign(RIGHT);
+  textFont('Press Start 2P');
+  text("Player 2 Score: " + score2, width-50,  30);
+
+
   //Paddle 01
   rect(10, mouseY, 10, pad.padHeight);
 
@@ -65,39 +73,36 @@ function draw() {
 
   //Ball zeichnen (aus dem Array und dem Object Ball sowie der Current Position)
   ellipse(currentPos.xPos, currentPos.yPos, currentPos.radius);
-  
-  // Ball prallt ab (Bounce)
-  if (currentPos.xPos > (width-currentPos.radius) || currentPos.xPos < (0+currentPos.radius)) {
+
+  // Ball prallt bei Paddle ab
+  if ((currentPos.yPos > mouseY && currentPos.yPos < mouseY + 90) && (currentPos.xPos <= 30 || currentPos.xPos >= width-30)){
     currentPos.speedX = currentPos.speedX  * -1;
   }
 
   if (currentPos.yPos > (height-currentPos.radius) || currentPos.yPos < (0+currentPos.radius)) {
     currentPos.speedY = currentPos.speedY * -1;
   }
+
   // Ball fliegt
   currentPos.xPos += currentPos.speedX;
   currentPos.yPos += currentPos.speedY;
 
-
   
-  // Score zählt hoch und runter (Die 10 zählt ist der Radius des Balles, damits funktioniert.)
+  // Score zählt hoch (Die 10 zählt ist der Radius des Balles, damits funktioniert.)
   // Ball wird in die Mitte zurück gesetzt und zufällig in eine neue Richtung geschickt.
   if (currentPos.xPos <= 10) {
-    score += -1;
+    score2 += 1;
     currentPos.speedX = random(-5,5);
     currentPos.speedY = random(-5,5);
     currentPos.xPos = width/2;
-
 
   }
 
   if (currentPos.xPos >= width-10) {
-    score += 1;
+    score1 += 1;
     currentPos.speedX = random(-5,5);
     currentPos.speedY = random(-5,5);
     currentPos.xPos = width/2;
-
-
 
   }
 
