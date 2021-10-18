@@ -164,9 +164,7 @@ function draw() {
       /* =====================     PADDLES      ====================================== */
       /*
       Paddle 01 Bounce
-      Wenn die x Position des Balls kleiner oder = Balkenposition
-      und die y Position zwischen Mauszeiger Y und Mauszeiger Y + Paddle-Höhe dann: 
-      Bounce Ball zurück und erhöhe die Geschwindigkeit
+      Wenn die x Position des Balls kleiner oder = Balkenposition und die y Position zwischen Mauszeiger Y und Mauszeiger Y + Paddle-Höhe dann: Bounce Ball zurück und erhöhe die Geschwindigkeit
       */
 
       if((currentPos.xPos <= 30) && (currentPos.yPos >= mouseY && currentPos.yPos <= (mouseY + pad.padHeight))) {
