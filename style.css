@@ -18,7 +18,7 @@ html, body {
   .game-frame {
     width: 600px;
     height: 500px;
-    border:rgb(0, 255, 76);
+    border:rgb(51, 39, 119);
     border-style: solid;
     margin: 2vw;
     filter: drop-shadow(0 0 40px rgba(0, 255, 76, 0.6));
